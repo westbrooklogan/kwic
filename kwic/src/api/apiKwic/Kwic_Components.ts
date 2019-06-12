@@ -7,11 +7,13 @@ export class Parser {
      ****************/
 
      // constructor that assigns user input
-
     // parses the string into an array of words for
     // shifting
     parse(userInput:string) {
-        return userInput.split(" ");
+        for(let i:int = 0; i < userInput.length - 1; i++)
+        {
+            if(userInput
+        }
     }
 };
 
@@ -36,7 +38,7 @@ export function cyclic_Shift(parsedInput:string[]) {
         const firstWord = parsedInput.shift();
         parsedInput.push(firstWord);
     }
-}
+};
 
 // cyclically shifts words from front to
 // end of string and stores the result each time
