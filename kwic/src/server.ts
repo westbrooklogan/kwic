@@ -15,8 +15,7 @@ app.post("/tours", (req, res, next) => {
     res.send("Adding a Tour...");
 });
 
-app.post("/KWIC", (req, res, next) => {
-    res.send("Shifting string...");
-})
+app.post("/KWIC", Kwic);
+
 // start server and listen to incoming request
 app.listen(process.env.PORT || 8091, () => {console.log("Server started...")});
