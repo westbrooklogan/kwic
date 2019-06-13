@@ -1,5 +1,4 @@
-import express, { response } from "express";
-import { resolve } from "url";
+import express from "express";
 import { Kwic } from "./api/apiKwic/Kwic";
 
 const app = express();
