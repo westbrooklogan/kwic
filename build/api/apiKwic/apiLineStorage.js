@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const LineStorage_1 = require("./LineStorage");
+// middleware for storing lines
 exports.apiLineStorage = (req, res, next) => {
     const lineStrg = new LineStorage_1.LineStorage();
     const linesToStore = req.ParsedString;

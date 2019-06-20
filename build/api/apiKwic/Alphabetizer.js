@@ -1,13 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.alphabetizer = (req, res, next) => {
-    let stringsToSort = req.body.string_To_Shift;
-    if (stringsToSort) {
-        const stringSorter = new Alphabetizer();
-        let sortedStrings = stringSorter.sortResults(stringsToSort, ">");
-        res.json(sortedStrings);
-    }
-};
 class Alphabetizer {
     // this function is for shifting shift results
     sortResults(shiftResults, sortType) {
@@ -19,14 +11,14 @@ class Alphabetizer {
                 for (let i = 0; i < shiftResults.length; i++) {
                     let lines = shiftResults[i];
                     // ascending order quick sort
-                    sortResults.push(this._lexicographicQuickSort(lines, 0, lines.length - 1));
+                    sortResults.push(this.lexicographicQuickSort(lines, 0, lines.length - 1));
                 }
             return sortResults;
         }
         return [];
     }
     // recursive quick sort
-    _lexicographicQuickSort(lines, low, high) {
+    lexicographicQuickSort(lines, low, high) {
         // while low and high are not equal
         if (low < high) {
             // puts greater values to right of pivot (high)
@@ -34,22 +26,21 @@ class Alphabetizer {
             // new position
             let pivot = this._partion(lines, low, high);
             // sort each side of the pivot
-            this._lexicographicQuickSort(lines, low, pivot - 1);
-            this._lexicographicQuickSort(lines, pivot + 1, high);
+            this.lexicographicQuickSort(lines, low, pivot - 1);
+            this.lexicographicQuickSort(lines, pivot + 1, high);
         }
         return lines;
     }
     // high acts as the pivot in this sort
     _partion(lines, low, high) {
-        let pivot = lines[high].toLowerCase();
+        let pivot = lines[high];
         let index = low - 1;
         /* while lines[j] is <= pivot, we need
            to move the bigger numbers closer to
            the pivot and smaller numbers farther
            from the pivot */
         for (let j = low; j < high; j++) {
-            let lineToCheck = lines[j].toLowerCase();
-            if (lineToCheck <= pivot) {
+            if (lines[j] <= pivot) {
                 index++;
                 this._swap(lines, index, j);
             }

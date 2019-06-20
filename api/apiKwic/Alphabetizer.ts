@@ -1,19 +1,5 @@
 import { RequestHandler } from "express";
 
-export const alphabetizer:RequestHandler = (req, res, next) => {
-    let stringsToSort = req.body.string_To_Shift;
-
-    if(stringsToSort) {
-        const stringSorter:Alphabetizer = new Alphabetizer(); 
-        let sortedStrings:string[][] = 
-            stringSorter.sortResults(stringsToSort, ">");
-        
-        res.json(sortedStrings);
-    }
-
-
-}
-
 export class Alphabetizer {
     // this function is for shifting shift results
     sortResults(shiftResults:string[][], sortType:string) {
@@ -28,7 +14,7 @@ export class Alphabetizer {
                 let lines = shiftResults[i];
                 // ascending order quick sort
                 sortResults.push(
-                    this._lexicographicQuickSort(lines, 0, lines.length - 1));
+                    this.lexicographicQuickSort(lines, 0, lines.length - 1));
             }
 
         return sortResults;
@@ -38,7 +24,7 @@ export class Alphabetizer {
     }
 
     // recursive quick sort
-    _lexicographicQuickSort(lines:string[], low:number, high:number) {
+    lexicographicQuickSort(lines:string[], low:number, high:number) {
         // while low and high are not equal
         if(low < high) {
             // puts greater values to right of pivot (high)
@@ -47,8 +33,8 @@ export class Alphabetizer {
             let pivot:number = this._partion(lines, low, high);
 
             // sort each side of the pivot
-            this._lexicographicQuickSort(lines, low, pivot - 1);
-            this._lexicographicQuickSort(lines, pivot + 1, high);
+            this.lexicographicQuickSort(lines, low, pivot - 1);
+            this.lexicographicQuickSort(lines, pivot + 1, high);
         }
         
         return lines;
@@ -57,7 +43,7 @@ export class Alphabetizer {
     // high acts as the pivot in this sort
     _partion(lines:string[], low:number, high:number) {
 
-        let pivot:string = lines[high].toLowerCase();
+        let pivot:string = lines[high];
         let index = low - 1;
 
         /* while lines[j] is <= pivot, we need
@@ -65,10 +51,8 @@ export class Alphabetizer {
            the pivot and smaller numbers farther 
            from the pivot */
         for(let j:number = low; j < high; j++) {
-            let lineToCheck:string = 
-                lines[j].toLowerCase();
             
-            if(lineToCheck <= pivot) {
+            if(lines[j] <= pivot) {
                 index++;
                 this._swap(lines, index, j);
             }

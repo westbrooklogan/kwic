@@ -5,6 +5,7 @@ import { CyclicShifter } from "./CyclicShifter";
 import { LineStorage } from "./LineStorage";
 import { Parser } from "./Parser";
 
+// combines the middleware into a more master controller style
 export const apiKwic:KwicRequestHandler = (req, res, next) => {
     const input:string = req.body.string_To_Shift;
     const inputParser:Parser = new Parser();
