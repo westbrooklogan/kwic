@@ -33,8 +33,9 @@ export default class HomePage extends React.Component {
     // When go button is clicked
     onSubmit = () => {
         console.log('My JSON Object:', this.state);
-        axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        axios.post('http://localhost:8091/KWIC')
             .then((res) => {
+                console.log(res);
                 const circularShifted = res.data.title;
                 const alphabeticallyShifted = res.data.title;
                 console.log('API Response:', circularShifted, alphabeticallyShifted);
@@ -54,6 +55,7 @@ export default class HomePage extends React.Component {
                     <Grid.Row columns={1}>
                         <Grid.Column>
                             <h1 align='center'>Input</h1>
+                            <p>Insert input and press the green button.</p>
                             <Form size='big'>
                                 <Input type='text' name="kwicText" onChange={this.onChange} value={kwicText}
                                        placeholder='Input KWIC text here' fluid/>
