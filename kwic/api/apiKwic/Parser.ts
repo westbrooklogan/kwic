@@ -34,7 +34,7 @@ export class Parser {
         // make sure there is userinput
         let parsedLines:string[][] = [];
         
-        if(typeof(userInput) != undefined && userInput.length) {
+        if(typeof(userInput) != "undefined" && userInput.length) {
             let current:number = 0, firstChar:number = 0;
         
             // parse each line then parse each line by words
