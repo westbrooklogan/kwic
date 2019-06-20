@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
 
     // Component variables
     state = {
-        kwicText: '',
+        string_To_Shift: '',
         cyclicallyShifted: '',
         alphabeticallyShifted: ''
     };
