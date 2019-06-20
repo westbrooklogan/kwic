@@ -1,26 +1,33 @@
 {
   "name": "kwic",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
   "private": true,
-  "homepage": "https://fedolodic.github.io/kwic/",
+  "homepage": "https://github.com/Fedolodic/kwic",
   "dependencies": {
-    "@types/express": "^4.17.0",
     "axios": "^0.18.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.1"
+    "semantic-ui-react": "^0.87.1",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "start-server": "tsc && node build/server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b master — repo https://github.com/Fedolodic/kwic",
     "eject": "react-scripts eject"
   },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -37,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "@types/express": "^4.17.0"
   }
 }
