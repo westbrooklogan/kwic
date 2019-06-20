@@ -33,7 +33,9 @@ export default class HomePage extends React.Component {
     // When go button is clicked
     onSubmit = () => {
         console.log('My JSON Object:', this.state);
-        axios.post('http://localhost:8091/KWIC')
+        axios.post('http://localhost:8091/KWIC', {
+            kwicText: this.this.state.kwicText
+        })
             .then((res) => {
                 console.log(res);
                 const circularShifted = res.data.title;
@@ -42,6 +44,9 @@ export default class HomePage extends React.Component {
 
                 this.setState({cyclicallyShifted: circularShifted, alphabeticallyShifted: alphabeticallyShifted});
             })
+            .catch(error => {
+                console.log(JSON.stringify(error))
+            });
     };
 
     // Show these tags
