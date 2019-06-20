@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kwic/src/static/css/main.34de6062.chunk.css",
-    "main.js": "/kwic/src/static/js/main.fe323c03.chunk.js",
-    "main.js.map": "/kwic/src/static/js/main.fe323c03.chunk.js.map",
-    "runtime~main.js": "/kwic/src/static/js/runtime~main.c3655bd8.js",
-    "runtime~main.js.map": "/kwic/src/static/js/runtime~main.c3655bd8.js.map",
-    "static/js/2.dd66a7cf.chunk.js": "/kwic/src/static/js/2.dd66a7cf.chunk.js",
-    "static/js/2.dd66a7cf.chunk.js.map": "/kwic/src/static/js/2.dd66a7cf.chunk.js.map",
-    "index.html": "/kwic/src/index.html",
-    "precache-manifest.bc25426dbb8c4ec0c8aca2a064e023bc.js": "/kwic/src/precache-manifest.bc25426dbb8c4ec0c8aca2a064e023bc.js",
-    "service-worker.js": "/kwic/src/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/kwic/src/static/css/main.34de6062.chunk.css.map"
+    "main.css": "/kwic/static/css/main.34de6062.chunk.css",
+    "main.js": "/kwic/static/js/main.cbf1f87b.chunk.js",
+    "main.js.map": "/kwic/static/js/main.cbf1f87b.chunk.js.map",
+    "runtime~main.js": "/kwic/static/js/runtime~main.ecbf97cf.js",
+    "runtime~main.js.map": "/kwic/static/js/runtime~main.ecbf97cf.js.map",
+    "static/js/2.dd66a7cf.chunk.js": "/kwic/static/js/2.dd66a7cf.chunk.js",
+    "static/js/2.dd66a7cf.chunk.js.map": "/kwic/static/js/2.dd66a7cf.chunk.js.map",
+    "index.html": "/kwic/index.html",
+    "precache-manifest.6e648c2aa2dae9a6f8c497ec5252ce29.js": "/kwic/precache-manifest.6e648c2aa2dae9a6f8c497ec5252ce29.js",
+    "service-worker.js": "/kwic/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/kwic/static/css/main.34de6062.chunk.css.map"
   }
 }
