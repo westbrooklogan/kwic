@@ -5,6 +5,7 @@ const Combiner_1 = require("./Combiner");
 const CyclicShifter_1 = require("./CyclicShifter");
 const LineStorage_1 = require("./LineStorage");
 const Parser_1 = require("./Parser");
+// combines the middleware into a more master controller style
 exports.apiKwic = (req, res, next) => {
     const input = req.body.string_To_Shift;
     const inputParser = new Parser_1.Parser();

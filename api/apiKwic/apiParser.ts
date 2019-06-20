@@ -2,10 +2,10 @@ import { RequestHandler } from "express";
 import { Parser } from "./Parser";
 import { KwicRequestHandler } from "./KwicRequestHandler";
 
+// middleware for parsing lines
 export const apiParser:KwicRequestHandler = (req, res, next) => {
     const input:string = req.body.string_To_Shift;
-    const inputParser:Parser = new Parser();
-    const parsedString = inputParser.parse(input);
+    const parsedString = parseInput(new Parser(), input);
 
     if(parsedString) {
         req.ParsedString = parsedString;
@@ -17,4 +17,8 @@ export const apiParser:KwicRequestHandler = (req, res, next) => {
         ));
     }
 
+}
+
+const parseInput = (inputParser:Parser, input:string) => {
+    return inputParser.parse(input);
 }

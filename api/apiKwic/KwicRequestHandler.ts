@@ -5,6 +5,7 @@ export interface KwicRequest extends Request {
     StoredString?:string[][]
     ShiftedString?:string[][][]
     CombinedString?:string[][]
+    CombinedResults?:string[][]
 }
 
 export interface KwicResponse extends Response {

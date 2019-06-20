@@ -2,6 +2,7 @@ import { RequestHandler } from "express";
 import { LineStorage } from "./LineStorage";
 import { KwicRequestHandler } from "./KwicRequestHandler";
 
+// middleware for storing lines
 export const apiLineStorage:KwicRequestHandler = (req, res, next) => {
     const lineStrg:LineStorage = new LineStorage();
     const linesToStore = req.ParsedString;
