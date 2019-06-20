@@ -29,7 +29,7 @@ export class Combiner {
         let combinedString:string[][] = [];
 
         // make sure there is content
-        if(parsedString) {
+        if(parsedString && parsedString.length) {
             let combinedLine:string[][] = [];
     
             // combining
