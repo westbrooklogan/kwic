@@ -34,15 +34,15 @@ export default class HomePage extends React.Component {
     onSubmit = () => {
         console.log('My JSON Object:', this.state);
         axios.post('http://localhost:8091/KWIC', {
-            kwicText: this.this.state.kwicText
+            kwicText: this.state.kwicText
         })
             .then((res) => {
                 console.log(res);
-                const circularShifted = res.data.title;
-                const alphabeticallyShifted = res.data.title;
-                console.log('API Response:', circularShifted, alphabeticallyShifted);
+                const cyclicallyShifted = res.data.cyclicallyShifted;
+                const alphabeticallyShifted = res.data.alphabeticallyShifted;
+                console.log('API Response:', cyclicallyShifted, alphabeticallyShifted);
 
-                this.setState({cyclicallyShifted: circularShifted, alphabeticallyShifted: alphabeticallyShifted});
+                this.setState({cyclicallyShifted: cyclicallyShifted, alphabeticallyShifted: alphabeticallyShifted});
             })
             .catch(error => {
                 console.log(JSON.stringify(error))
